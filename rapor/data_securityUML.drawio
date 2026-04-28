@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36">
+  <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
+    <mxGraphModel dx="1060" dy="1792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="guiapp" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;strokeColor=#666666;fillColor=none;" value="&lt;b&gt;«Streamlit UI module»&lt;/b&gt;&lt;br&gt;&lt;b&gt;GUIApp&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Attributes&lt;/b&gt;&lt;br&gt;+ APP_TITLE : String&lt;br&gt;+ APP_DESCRIPTION : String&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; white-space: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20edge%3D%221%22%20parent%3D%221%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3Brounded%3D0%3BexitX%3D-0.002%3BexitY%3D0.112%3BexitDx%3D0%3BexitDy%3D0%3BexitPerimeter%3D0%3BentryX%3D0.996%3BentryY%3D0.108%3BentryDx%3D0%3BentryDy%3D0%3BentryPerimeter%3D0%3B%22%20value%3D%22%22%3E%3CmxGeometry%20height%3D%2250%22%20relative%3D%221%22%20width%3D%2250%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2239%22%20y%3D%22167%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22399%22%20y%3D%22165%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;br&gt;+ configure_page() : None&lt;br&gt;+ parse_key_value(raw_key, key_format) : String&lt;br&gt;+ block_views_df(binary_block) : DataFrame&lt;br&gt;+ permutation_tables_df() : DataFrame&lt;br&gt;+ sbox_df(sbox) : DataFrame&lt;br&gt;+ build_key_schedule_trace(key_binary) : Dict&lt;br&gt;+ build_single_steps(...) : List[Dict]&lt;br&gt;+ build_single_result_vector(...) : Dict&lt;br&gt;+ find_unique_bruteforce_key(...) : Dict&lt;br&gt;+ build_bruteforce_attempts(...) : DataFrame&lt;br&gt;+ build_attack_result_text(...) : String&lt;br&gt;+ build_mode_result_text(...) : String&lt;br&gt;+ build_differential_result_text(...) : String&lt;br&gt;+ render_reference_section() : None&lt;br&gt;+ render_single_block_tab() : None&lt;br&gt;+ render_modes_tab() : None&lt;br&gt;+ render_attack_tab() : None&lt;br&gt;+ render_differential_tab() : None&lt;br&gt;+ main() : None" vertex="1">
+          <mxGeometry height="420" width="360" x="40" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="blockmodes" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;strokeColor=#666666;fillColor=none;" value="&lt;b&gt;&amp;laquo;submodule&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;BlockCipherModes&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ ecb_encrypt(blocks, key_10bit, verbose=False) : List[String]&lt;br&gt;+ ecb_decrypt(blocks, key_10bit, verbose=False) : List[String]&lt;br&gt;+ cbc_encrypt(blocks, key_10bit, iv_8bit, verbose=False) : List[String], Tuple&lt;br&gt;+ cbc_decrypt(blocks, key_10bit, iv_8bit, verbose=False) : List[String], Tuple&lt;br&gt;+ ofb_encrypt(blocks, key_10bit, iv_8bit, verbose=False) : List[String], Tuple&lt;br&gt;+ ofb_decrypt(blocks, key_10bit, iv_8bit, verbose=False) : List[String], Tuple" vertex="1">
+          <mxGeometry height="250" width="320" x="530" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="cryptanalysis" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;strokeColor=#666666;fillColor=none;" value="&lt;b&gt;&amp;laquo;submodule&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Cryptanalysis&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ brute_force_attack(plaintext_8bit, ciphertext_8bit, verbose=False) : Dict&lt;br&gt;+ brute_force_attack_unique(...) : Dict&lt;br&gt;+ differential_pair_analysis(...) : Dict&lt;br&gt;+ differential_experiment(...) : Dict&lt;br&gt;+ build_sbox_difference_table(sbox) : List[Dict]&lt;br&gt;+ run_test_case(name, key_10bit, plaintext_8bit) : Dict" vertex="1">
+          <mxGeometry height="220" width="320" x="530" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="sdescore" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;strokeColor=#666666;fillColor=none;" value="&lt;b&gt;&amp;laquo;module&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;SDESCore&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Attributes&lt;/b&gt;&lt;br&gt;+ P10_TABLE : List[int]&lt;br&gt;+ P8_TABLE : List[int]&lt;br&gt;+ P4_TABLE : List[int]&lt;br&gt;+ IP_TABLE : List[int]&lt;br&gt;+ IP_INV_TABLE : List[int]&lt;br&gt;+ EP_TABLE : List[int]&lt;br&gt;+ S0 : List[List[int]]&lt;br&gt;+ S1 : List[List[int]]&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ validate_binary_string(bits, expected_length, label) : None&lt;br&gt;+ validate_10bit_key(key) : None&lt;br&gt;+ validate_8bit_block(block) : None&lt;br&gt;+ validate_iv(iv_8bit) : None&lt;br&gt;+ validate_block_list(blocks) : None&lt;br&gt;+ parse_blocks_input(input_string) : List[String]&lt;br&gt;+ parse_input(value, format_type) : String&lt;br&gt;+ format_output(bits) : Dict&lt;br&gt;+ permute(bits, table) : String&lt;br&gt;+ left_shift(bits, n) : String&lt;br&gt;+ xor_bits(a, b) : String&lt;br&gt;+ split_bits(bits, size) : Tuple&lt;br&gt;+ join_bits(left, right) : String&lt;br&gt;+ apply_p10(key_10bit) : String&lt;br&gt;+ apply_p8(bits_10bit) : String&lt;br&gt;+ generate_subkeys(key_10bit, verbose=False) : Tuple&lt;br&gt;+ apply_ep(right_4bit) : String&lt;br&gt;+ apply_p4(bits_4bit) : String&lt;br&gt;+ sbox_lookup(bits_4bit, sbox) : String&lt;br&gt;+ apply_sboxes(bits_8bit, verbose=False) : Tuple&lt;br&gt;+ fk(block_8bit, subkey_8bit, verbose=False) : Tuple&lt;br&gt;+ apply_ip(block_8bit) : String&lt;br&gt;+ apply_ip_inverse(block_8bit) : String&lt;br&gt;+ switch_halves(block_8bit) : String&lt;br&gt;+ encrypt_block(plaintext_8bit, key_10bit, verbose=False) : String, Tuple&lt;br&gt;+ decrypt_block(ciphertext_8bit, key_10bit, verbose=False) : String, Tuple" vertex="1">
+          <mxGeometry height="630" width="340" x="1000" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="tests" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;strokeColor=#666666;fillColor=none;" value="&lt;b&gt;&amp;laquo;validation script&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;TestSDESCore&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ run_validation_tests() : bool&lt;br&gt;+ run_helper_tests() : bool&lt;br&gt;+ run_core_algorithm_tests() : bool&lt;br&gt;+ run_differential_tests() : bool&lt;br&gt;+ show_decryption_trace_demo() : None&lt;br&gt;+ main() : None" vertex="1">
+          <mxGeometry height="180" width="250" x="95" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="guiapp" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="sdescore" value="imports core functions/constants">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="guiapp" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="blockmodes" value="imports ECB/CBC/OFB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="guiapp" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;entryX=0.363;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="cryptanalysis" value="imports brute-force &amp;amp; differential tools">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="blockmodes" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="sdescore" value="uses&amp;nbsp;&lt;div&gt;encrypt_block/decrypt_block&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;/xor_bits/validation&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="cryptanalysis" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="sdescore" value="uses encrypt_block / xor_bits / sbox_lookup / permute">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="tests" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="sdescore" value="validates helpers/core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="tests" style="rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;" target="cryptanalysis" value="validates attack utilities">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-1" edge="1" parent="1" source="guiapp" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.996;entryY=0.108;entryDx=0;entryDy=0;entryPerimeter=0;" target="guiapp" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="630" y="510" as="sourcePoint" />
+            <mxPoint x="680" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.996;entryY=0.108;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="40" y="222" as="sourcePoint" />
+            <mxPoint x="400" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.001;entryY=0.063;entryDx=0;entryDy=0;entryPerimeter=0;" target="sdescore" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1000" y="132" as="sourcePoint" />
+            <mxPoint x="1360" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1000" y="282" as="sourcePoint" />
+            <mxPoint x="1340" y="282" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-5" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.01;entryY=0.278;entryDx=0;entryDy=0;entryPerimeter=0;" target="tests" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="95" y="642" as="sourcePoint" />
+            <mxPoint x="340" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-6" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.999;entryY=0.212;entryDx=0;entryDy=0;entryPerimeter=0;" target="cryptanalysis" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="530" y="770" as="sourcePoint" />
+            <mxPoint x="850" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="joXwem-4AFjZIWi5XlIY-7" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=-0.002;exitY=0.112;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="530" y="-78" as="sourcePoint" />
+            <mxPoint x="850" y="-80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
