@@ -1,195 +1,116 @@
 # S-DES Data Security Project
 
-## Project Description
+This repository contains a university-level **data security project** built around **S-DES (Simplified Data Encryption Standard)**. It combines a manual Python implementation of the algorithm with an interactive Streamlit interface, validation scripts, and supporting project artifacts such as the report, presentation, and UML material.
 
-This repository contains a university Data Security project on **S-DES (Simplified Data Encryption Standard)**. The project includes a manual Python implementation of the S-DES algorithm, a Streamlit-based interactive web interface, validation tests, and helper functions for basic security analysis.
+The project is designed to make core cryptography ideas visible rather than hidden behind black-box libraries. It focuses on how a simplified block cipher works internally, how round-based encryption is constructed, and why small key spaces are insecure.
 
-The main goal of the project is to demonstrate how S-DES works at the bit level, including key generation, permutation operations, encryption and decryption rounds, block cipher modes, brute-force analysis, and differential cryptanalysis experiments. The implementation is intended for academic study and presentation purposes.
+## Why This Project Stands Out
 
-## Features
+Instead of only presenting theory, this repository turns a classroom cryptography topic into a practical and inspectable implementation.
 
-- Manual implementation of the S-DES core algorithm
-- S-DES constants and permutation tables:
-  - `P10`
-  - `P8`
-  - `P4`
-  - `IP`
-  - `IP^-1`
-  - `EP`
-- S-box definitions for `S0` and `S1`
-- Input validation for binary keys, blocks, and initialization vectors
-- Low-level bit operations:
-  - permutation
-  - left shift
-  - XOR
-  - split and join operations
-- Key scheduling and subkey generation:
-  - `K1`
-  - `K2`
-- Single-block encryption and decryption
-- Block cipher modes:
-  - ECB
-  - CBC
-  - OFB
-- Streamlit web interface with multiple interactive tabs
-- Step-by-step encryption and decryption visualization
-- Brute-force known-plaintext attack support
-- Differential cryptanalysis helper functions
-- S-box difference distribution table generation
-- Report-friendly validation output
-- Downloadable text outputs from the web interface
+It demonstrates:
 
-## Technologies Used
+- manual bit-level implementation of S-DES
+- key generation and subkey scheduling
+- encryption and decryption logic
+- block cipher modes
+- brute-force analysis on a small key space
+- introductory differential cryptanalysis support
+- an interactive interface for demonstration and learning
 
-- **Python** for the core S-DES implementation
-- **Streamlit** for the interactive web interface
-- **pandas** for displaying tabular data in the interface
+## Repository Structure
 
-The backend S-DES logic is implemented manually and does not rely on ready-made cryptography libraries for the S-DES core algorithm.
+The repository is organized into three main parts:
+
+- `kod/`
+  Source code for the S-DES implementation, the Streamlit interface, and validation scripts.
+
+- `rapor/`
+  Project documentation and UML material.
+
+- `sunum/`
+  Presentation assets prepared for the course project.
+
+## Core Features
+
+- manual implementation of the S-DES algorithm
+- S-DES permutation and transformation tables
+- subkey generation for `K1` and `K2`
+- single-block encryption and decryption
+- support for `ECB`, `CBC`, and `OFB` modes
+- validation checks for binary keys, blocks, and IV values
+- brute-force known-plaintext search utilities
+- differential cryptanalysis helper functions
+- Streamlit interface with step-by-step explanation flow
+
+## Technical Stack
+
+- `Python` for the algorithm implementation
+- `Streamlit` for the interactive web interface
+- `pandas` for tabular displays in the app
+
+The cryptographic core is implemented manually for educational transparency and does not depend on a ready-made S-DES package.
+
+## Main Source Files
+
+Inside `kod/` the most important files are:
+
+- `sdes_core.py`
+  Core S-DES logic, helper functions, cipher modes, and analysis utilities.
+
+- `gui_app.py`
+  Streamlit-based interface for encryption, decryption, and interactive demonstration.
+
+- `test_sdes_core.py`
+  Validation and demonstration tests for checking correctness.
+
+- `README_TR.md`
+  Turkish-language documentation for the code folder.
+
+## What You Can Do with the App
+
+The Streamlit interface is structured for demonstration and explanation.
+
+Main usage areas:
+
+- encrypt or decrypt a single 8-bit block
+- inspect generated subkeys and intermediate round values
+- experiment with `ECB`, `CBC`, and `OFB`
+- try known-plaintext brute-force key search
+- explore differential cryptanalysis helpers
+- view reference permutation and S-box tables
+
+This makes the repository useful both as a course submission and as a portfolio example of implementation-heavy security coursework.
 
 ## Quick Start
 
-```bash
-pip install streamlit pandas
-streamlit run gui_app.py
-```
-
-To run the validation script:
-
-```bash
-python test_sdes_core.py
-```
-
-## Project Structure
-
-The project is organized around three main Python files:
-
-- `sdes_core.py` contains the S-DES algorithm, block cipher modes, attack utilities, and differential cryptanalysis helpers.
-- `gui_app.py` contains the Streamlit interface used for interactive demonstration.
-- `test_sdes_core.py` contains validation tests and report-friendly output.
-
-## Repository Layout
-
-```text
-.
-├── README.md
-├── README_TR.md
-├── gui_app.py
-├── sdes_core.py
-├── test_sdes_core.py
-└── data_securityUML.drawio
-```
-
-## Requirements / Prerequisites
-
-Before running the project, make sure the following are installed:
-
-- Python 3.x
-- `pip`
-- Streamlit
-- pandas
-
-The project can be run locally from the command line. No cloud deployment or external cryptographic service is required.
-
-## Installation
-
-1. Clone or download the repository.
-
-2. Open a terminal in the project directory.
-
-3. Install the required dependencies:
+Install the required packages:
 
 ```bash
 pip install streamlit pandas
 ```
 
-## How to Run
+Move into the code directory:
 
-### Run the Streamlit Application
+```bash
+cd kod
+```
+
+Run the Streamlit application:
 
 ```bash
 streamlit run gui_app.py
 ```
 
-After running this command, Streamlit will start a local web server and provide a local URL in the terminal.
-
-### Run the Test Script
+Run the validation script:
 
 ```bash
 python test_sdes_core.py
 ```
 
-The test script prints expected values, actual values, and pass/fail results in a format suitable for inclusion in a report or project demonstration.
+## Example Test Vector
 
-## Sample Commands
-
-```bash
-# Install dependencies
-pip install streamlit pandas
-
-# Start the interactive web interface
-streamlit run gui_app.py
-
-# Run validation and demonstration tests
-python test_sdes_core.py
-```
-
-## Usage
-
-The Streamlit interface is divided into several practical sections for demonstration and analysis.
-
-### Encrypt / Decrypt Tab
-
-This tab allows users to perform single-block S-DES encryption and decryption. It includes:
-
-- input fields for an 8-bit plaintext or ciphertext block
-- input field for a 10-bit key
-- generated subkeys `K1` and `K2`
-- step-by-step visualization of the S-DES process
-- intermediate permutation, S-box, and round values
-- final encrypted or decrypted output
-
-This section is useful for explaining the internal structure of S-DES during a presentation.
-
-### ECB / CBC / OFB Mode Tab
-
-This tab supports multi-block encryption and decryption using common block cipher modes:
-
-- **ECB (Electronic Codebook):** processes each block independently
-- **CBC (Cipher Block Chaining):** uses an initialization vector and chaining between blocks
-- **OFB (Output Feedback):** generates a keystream using feedback from the cipher output
-
-Users can enter multiple 8-bit blocks, select a mode, provide the required key and initialization vector when needed, and view the resulting block outputs.
-
-### Brute-force Attack Tab
-
-This tab demonstrates known-plaintext brute-force analysis against the small S-DES key space. Users can provide plaintext and ciphertext pairs and search for candidate 10-bit keys.
-
-Because S-DES uses a very small key size, exhaustive key search is computationally feasible and useful for educational demonstration.
-
-### Differential Cryptanalysis Tab
-
-This tab provides helper tools for differential cryptanalysis experiments, including:
-
-- differential pair analysis
-- differential experiment execution
-- S-box difference distribution table generation
-
-These tools help illustrate how input differences may influence output differences in simplified block cipher structures.
-
-### Reference Tables
-
-The interface also displays visible S-DES reference information such as:
-
-- permutation tables
-- expansion/permutation tables
-- S-box tables
-
-These tables support step-by-step learning and make the interface suitable for a classroom demonstration.
-
-## Example Test Vectors
-
-The validation script includes sample S-DES-style test vectors that can be used to verify the implementation:
+The implementation includes validation-friendly sample values such as:
 
 ```text
 Key:        1010000010
@@ -199,65 +120,25 @@ K2:         01000011
 Ciphertext: 10101000
 ```
 
-These values are used by `test_sdes_core.py` to compare expected and actual results. Additional examples can be generated through the Streamlit interface.
+These values are used to verify that encryption and subkey generation behave as expected.
 
-## Validation and Testing
+## Educational Value
 
-The file `test_sdes_core.py` validates important parts of the implementation, including:
+This repository is especially useful for showing:
 
-- input validation checks
-- helper function behavior
-- permutation operations
-- S-box lookup behavior
-- subkey generation
-- encryption and decryption correctness
-- differential cryptanalysis helper behavior
-- verbose decryption trace output for demonstration
+- understanding of Feistel-style cipher structure
+- comfort with low-level binary transformations
+- ability to turn theory into a working tool
+- awareness of key-space weakness and brute-force feasibility
+- interest in analytical security concepts beyond simple encryption/decryption
 
-The script prints results in a pass/fail format, making it suitable for project reports and live demonstrations.
+## Notes and Limitations
 
-Run the tests with:
-
-```bash
-python test_sdes_core.py
-```
-
-## Security Analysis
-
-This project includes basic security analysis features for educational purposes.
-
-### Brute-force Analysis
-
-S-DES uses a 10-bit key, so the full key space contains only 1024 possible keys. The project includes brute-force utilities that can search this key space using known plaintext and ciphertext pairs.
-
-This demonstrates why small key sizes are insecure and why modern cryptographic systems require significantly larger key spaces.
-
-### Differential Cryptanalysis
-
-The project also includes helper functions for differential cryptanalysis, including S-box difference distribution table generation and differential pair experiments.
-
-These features are intended to support conceptual analysis of how differences in input blocks propagate through simplified cipher components.
-
-## Notes / Limitations
-
-- S-DES is an educational algorithm and is not secure for real-world use.
-- The implementation is designed for learning, testing, and presentation.
-- The project should not be used to protect sensitive data.
-- The Streamlit interface is intended for local demonstration.
-- The brute-force and differential cryptanalysis features are simplified for academic study.
-- The implementation focuses on clarity and traceability rather than industrial performance.
-
-## Optional Future Improvements
-
-Possible future extensions include:
-
-- adding more predefined test vectors
-- exporting full step-by-step traces as structured report files
-- adding visual diagrams for Feistel rounds
-- improving multi-block input formatting options
-- adding more detailed explanations for differential cryptanalysis outputs
-- expanding automated tests for ECB, CBC, and OFB modes
+- S-DES is an educational algorithm and is not secure for real-world protection
+- the repository is intended for learning, experimentation, and presentation
+- the analysis components are simplified for academic use
+- the focus is clarity and interpretability rather than production performance
 
 ## License
 
-For academic use.
+For academic and educational use.
